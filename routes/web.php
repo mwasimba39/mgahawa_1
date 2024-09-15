@@ -54,4 +54,3 @@ Route::get('/customer/home', [CustomerController::class, 'index','total'])->name
 Route::get('/customer/home', [FoodController::class, 'showMenu'])->name('customer.home');
 Route::get('/order/create/{food_id}', [OrderController::class, 'createorder'])->name('order.create');
 Route::post('/order/store', [OrderController::class, 'store'])->name('order.store');
-
