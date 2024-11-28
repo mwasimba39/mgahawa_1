@@ -13,13 +13,12 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained()->onDelete('cascade'); // Muunganisho na user
-            $table->foreignId('food_id')->constrained('foods')->onDelete('cascade'); // Muunganisho na chakula
-            $table->string('customer_name'); // Jina la mteja
-            $table->string('customer_email'); // Barua pepe ya mteja
-            $table->dateTime('arrival_time'); // Muda wa kufika
-            $table->integer('amount'); // Kiasi cha chakula
-            $table->string('payment_method'); 
+            $table->foreignId('user_id')->constrained()->onDelete('cascade'); // Links to users table
+            $table->foreignId('food_id')->constrained('foods')->onDelete('cascade'); // Links to foods table
+            $table->string('customer_name');
+            $table->string('customer_email');
+            $table->integer('amount');
+            $table->string('payment_method');
             $table->timestamps();
         });
     }

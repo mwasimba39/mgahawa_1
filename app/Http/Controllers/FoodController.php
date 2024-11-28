@@ -44,17 +44,20 @@ class FoodController extends Controller
     {
         $search = $request->input('search');
         
+        // If there is a search query, filter foods accordingly
         if ($search) {
             $foods = Food::where('name', 'like', '%' . $search . '%')
                 ->orWhere('description', 'like', '%' . $search . '%')
                 ->orWhere('price', 'like', '%' . $search . '%')
                 ->paginate(10);
         } else {
+            // If no search query, return paginated foods
             $foods = Food::paginate(6);
         }
-
+    
         return view('owner.availablefood', ['foods' => $foods]);
     }
+    
 
     public function editfood($id)
     {

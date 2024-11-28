@@ -50,7 +50,17 @@ Route::delete('/owner/{id}', [FoodController::class, 'deletefood'])->name('owner
 
 //customer routes
 
-Route::get('/customer/home', [CustomerController::class, 'index','total'])->name('customer.home')->middleware('auth');
-Route::get('/customer/home', [FoodController::class, 'showMenu'])->name('customer.home');
-Route::get('/order/create/{food_id}', [OrderController::class, 'createorder'])->name('order.create');
+
+// Route for the customer's home
+Route::get('/customer/home', [CustomerController::class, 'index'])->name('customer.home');
+
+Route::get('/customer/home', [CustomerController::class, 'index'])->name('customer.home');
+
+// If you want to show the menu within the CustomerController, you can do so like this:
+// Alternatively, you can call the showMenu method in the CustomerController if you want to handle everything in one controller
+Route::get('/customer/menu', [FoodController::class, 'showMenu'])->name('customer.menu')->middleware('auth');
+
+Route::get('/order/create/{food_id}', [OrderController::class, 'createOrder'])->name('order.create');
 Route::post('/order/store', [OrderController::class, 'store'])->name('order.store');
+
+Route::get('/customer/orders', [OrderController::class, 'showOrders'])->name('customer.orders')->middleware('auth');

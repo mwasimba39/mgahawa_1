@@ -52,6 +52,7 @@
             <div class="hidden md:flex space-x-6">
                 <a href="#" class="hover:text-gray-300">Nyumbani</a>
                 <a href="#menu" class="hover:text-gray-300">Menyu</a>
+                <a href="#menu" class="hover:text-gray-300">Oda zako</a>
                 <a href="#services" class="hover:text-gray-300">Huduma</a>
                 <a href="#contact" class="hover:text-gray-300">Mawasiliano</a>
                 <form method="POST" action="{{ route('logout') }}">
@@ -72,7 +73,6 @@
         </div>
     </section>
     
-
     <section id="menu" class="py-20 bg-white">
         <div class="container mx-auto text-center">
             <h2 class="text-4xl font-bold mb-10">Menyu Yetu</h2>
@@ -95,9 +95,6 @@
         </div>
     </section>
     
-
-    <!-- Services and Contact Sections remain unchanged -->
-
     <footer class="bg-gray-900 text-white py-6">
         <div class="container mx-auto text-center">
             <p>&copy; 2024 LAM_Mgahawa. Haki zote zimehifadhiwa.</p>
